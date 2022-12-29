@@ -1,0 +1,43 @@
+//Testes de Requisição de Produtos
+@baseUrl = http://localhost:4000
+
+###
+//Obtendo todos os produtos
+GET {{baseUrl}}/produtos
+Content-Type: application/json
+
+###
+//Inserindo um novo produto
+POST {{baseUrl}}/produtos
+Content-Type: application/json
+
+{
+    "nome": "Carne de Frango",
+    "descricao": "Peito de Frango",
+    "codigobarra" : "1234567890124",
+    "preco" : "7.90"
+}
+
+###
+@id = 5fad758953a43f4e2a32e572
+//Obtendo um produto pelo id
+GET {{baseUrl}}/produtos/{{id}}
+Content-Type: application/json
+
+###
+//Removendo o produto pelo id
+DELETE {{baseUrl}}/produtos/{{id}}
+Content-Type:  application/json
+
+###
+//Alterando um produto
+PUT {{baseUrl}}/produtos
+Content-Type: application/json
+
+{
+    "_id": "5fad7c974c84c2578deeddb0",
+    "nome": "Carne de Frango Congelada",
+    "descricao": "Peito de Frango Sadia",
+    "codigobarra" : "1234567890124",
+    "preco" : "14.90"
+}
